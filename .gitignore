@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# Bundle de design bruto exportado do Claude Design (não faz parte do deploy)
+project/
