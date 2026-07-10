@@ -10,7 +10,7 @@
 
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/hankengrotesk-400.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/spacegrotesk-700.woff2" crossorigin>
-<link rel="preload" as="image" href="assets/hero-woman.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero-woman.webp" imagesrcset="assets/hero-woman-600.webp 600w, assets/hero-woman.webp 900w" imagesizes="(max-width:1200px) 420px, 58vw" fetchpriority="high">
 <style>
 /* ---- Self-hosted fonts (latin subset) — no third-party render-block ---- */
 @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/spacegrotesk-500.woff2) format('woff2');}
@@ -196,7 +196,7 @@ body{ background:#07060f; -webkit-font-smoothing:antialiased; }
   </nav>
 
   <!-- hero photo (behind chat card, pinned to page top) -->
-  <img src="assets/hero-woman.webp" width="900" height="924" fetchpriority="high" decoding="async" alt="" data-m="hero-img" style="position:absolute; top:0; right:max(-300px, -19vw); width:clamp(580px, 58vw, 980px); height:auto; z-index:1; pointer-events:none; user-select:none;">
+  <img src="assets/hero-woman.webp" srcset="assets/hero-woman-600.webp 600w, assets/hero-woman.webp 900w" sizes="(max-width:1200px) 420px, 58vw" width="900" height="924" fetchpriority="high" decoding="async" alt="" data-m="hero-img" style="position:absolute; top:0; right:max(-300px, -19vw); width:clamp(580px, 58vw, 980px); height:auto; z-index:1; pointer-events:none; user-select:none;">
 
   <!-- HERO -->
   <main>
@@ -295,7 +295,7 @@ body{ background:#07060f; -webkit-font-smoothing:antialiased; }
     <div data-m="stack" style="display:grid; grid-template-columns:repeat(12,1fr); gap:24px; align-items:end; margin-bottom:44px;">
       <div data-m="col arsenal-head" style="grid-column:1 / span 8;">
         <span style="font-size:18px; letter-spacing:.22em; text-transform:uppercase; font-weight:700; background:linear-gradient(110deg,#e9ddff,#a855f7 55%,#7c3aed); -webkit-background-clip:text; background-clip:text; color:transparent;">O que você recebe</span>
-        <h2 data-m="h2" style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#f6f3fe; font-size:clamp(36px,3.8vw,58px); line-height:1.04; letter-spacing:-.02em; white-space:nowrap; display:flex; align-items:center; gap:14px;"><img src="assets/logo-arsenal.webp" width="160" height="179" alt="O" style="height:1.05em; width:auto; display:block; flex:none; transform:translateY(-2px);"><span>Arsenal de 5 Mensagens Curtas</span></h2>
+        <h2 data-m="h2" style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#f6f3fe; font-size:clamp(36px,3.8vw,58px); line-height:1.04; letter-spacing:-.02em; white-space:nowrap; display:flex; align-items:center; gap:14px;"><img src="assets/logo-arsenal.webp" loading="lazy" decoding="async" width="160" height="179" alt="O" style="height:1.05em; width:auto; display:block; flex:none; transform:translateY(-2px);"><span>Arsenal de 5 Mensagens Curtas</span></h2>
       </div>
 
     </div>
@@ -343,11 +343,11 @@ body{ background:#07060f; -webkit-font-smoothing:antialiased; }
       <div data-m="bonus-leak" style="position:absolute; left:-290px; top:50%; transform:translateY(-50%); width:850px; height:940px; background:radial-gradient(ellipse 56% 54% at 2% 50%,rgba(250,246,255,1),rgba(228,210,255,.88) 16%,rgba(208,178,255,.76) 30%,rgba(180,130,250,.64) 44%,rgba(150,80,240,.52) 56%,rgba(124,58,237,.35) 70%,rgba(91,33,182,.17) 82%,transparent 92%); filter:blur(13px); pointer-events:none;"></div>
       <div data-m="bonus-leak" style="position:absolute; left:-40px; top:50%; transform:translateY(-50%); width:480px; height:380px; background:linear-gradient(90deg,rgba(240,232,255,.8),rgba(180,130,250,.36) 40%,rgba(124,58,237,.15) 70%,transparent); filter:blur(32px); pointer-events:none;"></div>
       <div data-m="bonus-leak" style="position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,transparent,rgba(244,238,255,.85),transparent); pointer-events:none;"></div>
-      <img src="assets/bonus-books.webp" width="621" height="837" alt="O Protocolo da Conversa Infinita" data-m="bonus-img" style="position:absolute; z-index:1; left:-12px; top:50%; transform:translateY(-50%); transform-origin:50% 72%; animation:mb-book-sway 6.5s ease-in-out infinite; height:148%; width:auto; max-width:none; object-fit:contain; pointer-events:none; filter:drop-shadow(0 22px 40px rgba(0,0,0,.45));">
+      <img src="assets/bonus-books.webp" loading="lazy" decoding="async" width="621" height="837" alt="O Protocolo da Conversa Infinita" data-m="bonus-img" style="position:absolute; z-index:1; left:-12px; top:50%; transform:translateY(-50%); transform-origin:50% 72%; animation:mb-book-sway 6.5s ease-in-out infinite; height:148%; width:auto; max-width:none; object-fit:contain; pointer-events:none; filter:drop-shadow(0 22px 40px rgba(0,0,0,.45));">
       <div data-m="stack" style="position:relative; z-index:2; display:grid; grid-template-columns:repeat(12,1fr); gap:24px; align-items:center;">
         <div data-m="col" style="grid-column:6 / span 7;">
           <span data-m="bonus-eyebrow" style="display:inline-flex; align-items:center; gap:8px; font-size:16px; letter-spacing:.22em; text-transform:uppercase; color:#d6c2fb; font-weight:700;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 12v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8" stroke="#d6c2fb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21.5 7.5h-19v4.5h19V7.5z" stroke="#d6c2fb" stroke-width="1.8" stroke-linejoin="round"></path><path d="M12 7.5V21M12 7.5S10.5 3.5 7.8 4.1C6 4.5 6 7 7.8 7.4c1.4.3 4.2.1 4.2.1zM12 7.5s1.5-4 4.2-3.4C18 4.5 18 7 16.2 7.4c-1.4.3-4.2.1-4.2.1z" stroke="#d6c2fb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Bônus de acesso imediato</span>
-          <h3 style="margin:20px 0 16px;"><img src="assets/logo-protocolo.webp" width="640" height="156" alt="O Protocolo da Conversa Infinita" style="display:block; width:100%; max-width:320px; height:auto;"></h3>
+          <h3 style="margin:20px 0 16px;"><img src="assets/logo-protocolo.webp" loading="lazy" decoding="async" width="640" height="156" alt="O Protocolo da Conversa Infinita" style="display:block; width:100%; max-width:320px; height:auto;"></h3>
           <p style="margin-top:12px; font-size:20px; line-height:1.55; color:#e0d8f4;">Domine a arte de manter o interesse de qualquer homem por horas.</p>
         </div>
       </div>
@@ -357,7 +357,7 @@ body{ background:#07060f; -webkit-font-smoothing:antialiased; }
   <!-- ANTES / DEPOIS -->
   <section data-m="pad stack ad" style="position:relative; z-index:5; max-width:1200px; margin:0 auto; padding:0 48px 88px; display:grid; grid-template-columns:repeat(12,1fr); gap:24px;">
     <div data-m="col" style="grid-column:1 / span 6; border-radius:20px; overflow:hidden; background:linear-gradient(165deg,rgba(28,20,40,.5),rgba(14,11,22,.6)); border:1px solid rgba(120,113,140,.18);">
-      <img src="assets/antes-couple.webp" width="960" height="540" alt="" style="display:block; width:100%; height:190px; object-fit:cover; object-position:50% 38%;">
+      <img src="assets/antes-couple.webp" loading="lazy" decoding="async" width="960" height="540" alt="" style="display:block; width:100%; height:190px; object-fit:cover; object-position:50% 38%;">
       <div style="padding:28px 32px 32px;">
         <div style="display:flex; align-items:center; gap:14px; margin-bottom:16px;">
           <div style="width:42px; height:42px; border-radius:13px; background:linear-gradient(145deg,#4a4458 0%,#322d3e 55%,#211d2a 100%); border:1px solid rgba(160,153,176,.18); display:flex; align-items:center; justify-content:center; box-shadow:inset 0 1.5px 1px rgba(190,184,205,.22), inset 0 -7px 13px rgba(10,8,16,.6); animation:mb-iconpulse 2.7s ease-in-out infinite;">
@@ -369,7 +369,7 @@ body{ background:#07060f; -webkit-font-smoothing:antialiased; }
       </div>
     </div>
     <div data-m="col" style="grid-column:7 / span 6; border-radius:20px; overflow:hidden; background:linear-gradient(165deg,rgba(35,25,62,.55),rgba(14,11,26,.7)); border:1px solid rgba(168,85,247,.16);">
-      <img src="assets/depois-phone.webp" width="960" height="540" alt="" style="display:block; width:100%; height:190px; object-fit:cover; object-position:50% 62%;">
+      <img src="assets/depois-phone.webp" loading="lazy" decoding="async" width="960" height="540" alt="" style="display:block; width:100%; height:190px; object-fit:cover; object-position:50% 62%;">
       <div style="padding:28px 32px 32px;">
         <div style="display:flex; align-items:center; gap:14px; margin-bottom:18px;">
           <div style="flex:none; width:44px; height:44px; border-radius:13px; background:linear-gradient(145deg,#dcc4ff 0%,#b07cf5 38%,#7c3aed 72%,#5b21b6 100%); border:1px solid rgba(255,255,255,.3); display:flex; align-items:center; justify-content:center; box-shadow:0 14px 26px rgba(76,29,149,.6), inset 0 2px 1px rgba(255,255,255,.65), inset 0 -9px 16px rgba(46,16,101,.65), inset 3px 0 8px rgba(255,255,255,.18); animation:mb-iconpulse 2.8s ease-in-out infinite;">
@@ -399,7 +399,7 @@ body{ background:#07060f; -webkit-font-smoothing:antialiased; }
       </div>
     </div>
     <div data-m="thiago-img" style="position:absolute; right:-5vw; top:47px; bottom:0; display:flex; align-items:flex-end; justify-content:flex-end;">
-      <img src="assets/thiago-lins.webp" width="855" height="742" alt="Thiago Lins" style="position: static; display: block; height: 100%; width: auto; max-width: none; object-fit: contain; margin: 0">
+      <img src="assets/thiago-lins.webp" loading="lazy" decoding="async" width="855" height="742" alt="Thiago Lins" style="position: static; display: block; height: 100%; width: auto; max-width: none; object-fit: contain; margin: 0">
     </div>
   </section>
 
@@ -438,7 +438,7 @@ body{ background:#07060f; -webkit-font-smoothing:antialiased; }
         <!-- right: countdown + CTA -->
         <div data-m="offer-right" style="grid-column:8 / span 5;">
           <div data-m="offer-books" style="position:relative; z-index:3; display:flex; justify-content:center; margin-top:-330px; margin-bottom:-64px;">
-            <img src="assets/books-bundle.webp" width="1100" height="827" alt="O Arsenal + O Protocolo da Conversa Infinita" style="width:760px; max-width:none; height:auto; display:block; filter:drop-shadow(0 24px 40px rgba(0,0,0,.45)); animation:mb-float 5.5s ease-in-out infinite;">
+            <img src="assets/books-bundle.webp" loading="lazy" decoding="async" width="1100" height="827" alt="O Arsenal + O Protocolo da Conversa Infinita" style="width:760px; max-width:none; height:auto; display:block; filter:drop-shadow(0 24px 40px rgba(0,0,0,.45)); animation:mb-float 5.5s ease-in-out infinite;">
           </div>
           <div data-m="offer-badge" style="display:flex; justify-content:center; margin-bottom:18px;">
             <div style="position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:9px; padding:8px 16px; border-radius:999px; background:rgba(22,12,40,.7); border:1px solid rgba(168,85,247,.32);">
@@ -484,7 +484,7 @@ body{ background:#07060f; -webkit-font-smoothing:antialiased; }
       <div style="position:absolute; left:-290px; top:50%; transform:translateY(-50%); width:850px; height:940px; background:radial-gradient(ellipse 56% 54% at 2% 50%,rgba(240,255,251,1),rgba(190,255,240,.86) 16%,rgba(140,245,220,.74) 30%,rgba(80,225,200,.6) 44%,rgba(45,200,180,.48) 56%,rgba(20,160,140,.3) 70%,rgba(13,110,95,.15) 82%,transparent 92%); filter:blur(13px); pointer-events:none;"></div>
       <div style="position:absolute; left:-40px; top:50%; transform:translateY(-50%); width:480px; height:380px; background:linear-gradient(90deg,rgba(230,255,248,.78),rgba(80,225,200,.32) 40%,rgba(20,160,140,.13) 70%,transparent); filter:blur(32px); pointer-events:none;"></div>
       <div style="position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,transparent,rgba(230,255,248,.85),transparent); pointer-events:none;"></div>
-      <img src="assets/shield-guarantee.webp" width="560" height="564" alt="Garantia" data-m="guarantee-img" style="position:absolute; z-index:1; left:-26px; top:50%; transform:translateY(-50%); height:280px; width:auto; max-width:none; object-fit:contain; pointer-events:none; animation:mb-shield-in .9s cubic-bezier(.2,.8,.3,1) both, mb-shield-float 4.5s ease-in-out .9s infinite;">
+      <img src="assets/shield-guarantee.webp" loading="lazy" decoding="async" width="560" height="564" alt="Garantia" data-m="guarantee-img" style="position:absolute; z-index:1; left:-26px; top:50%; transform:translateY(-50%); height:280px; width:auto; max-width:none; object-fit:contain; pointer-events:none; animation:mb-shield-in .9s cubic-bezier(.2,.8,.3,1) both, mb-shield-float 4.5s ease-in-out .9s infinite;">
       <div>
         <h3 data-m="guarantee-title" style="font-family:'Space Grotesk',sans-serif; font-weight:700; color:#d7fbf2; font-size:20px; margin-bottom:6px;">Garantia incondicional de 15 dias</h3>
         <p data-m="guarantee-desc" style="font-size:18.5px; line-height:1.55; color:#ffffff;">Experimente o produto. Se não receber uma resposta em poucos minutos, reembolsaremos o seu dinheiro.</p>
