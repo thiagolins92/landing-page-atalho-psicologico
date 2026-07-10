@@ -3,3 +3,6 @@
 
 # Bundle de design bruto exportado do Claude Design (não faz parte do deploy)
 project/
+
+# Local Netlify folder
+.netlify

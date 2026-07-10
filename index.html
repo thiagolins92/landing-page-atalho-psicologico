@@ -8,10 +8,144 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap"></noscript>
 
-<link rel="preload" as="image" href="assets/hero-woman.png">
-<link rel="stylesheet" href="styles.css">
+<link rel="preload" as="image" href="assets/hero-woman.webp" fetchpriority="high">
+<style>
+/* ===========================================================================
+   Atalho Psicológico — landing page
+   Recreated pixel-perfectly from the Claude Design prototype
+   (Atalho Psicologico.dc.html). Base reset, keyframes and the [data-m~]
+   mobile rules are carried over verbatim from the source <style> block.
+   The :hover rules at the bottom replace the prototype's custom
+   `style-hover` attribute.
+   =========================================================================== */
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{ background:#07060f; -webkit-font-smoothing:antialiased; }
+::selection{ background:rgba(168,85,247,.35); color:#fff; }
+
+@keyframes mb-fadeUp{ from{ opacity:0; transform:translateY(18px); } to{ opacity:1; transform:translateY(0); } }
+@keyframes mb-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+@keyframes mb-float{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-12px); } }
+@keyframes mb-typing{ 0%,60%,100%{ opacity:.25; transform:translateY(0); } 30%{ opacity:1; transform:translateY(-3px); } }
+@keyframes mb-reply{ 0%{ opacity:0; transform:translateY(10px) scale(.96); } 60%{ opacity:0; } 100%{ opacity:1; transform:translateY(0) scale(1); } }
+@keyframes mb-shimmer{ 0%{ background-position:-200% 0; } 100%{ background-position:200% 0; } }
+@keyframes mb-pulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(124,58,237,.45); } 50%{ box-shadow:0 0 44px 6px rgba(124,58,237,.55); } }
+@keyframes mb-sheen{ 0%{ left:-60%; } 55%{ left:140%; } 100%{ left:140%; } }
+@keyframes mb-badge{ 0%,100%{ box-shadow:0 0 0 0 rgba(168,85,247,0); border-color:rgba(168,85,247,.32); transform:scale(1); } 50%{ box-shadow:0 0 26px 3px rgba(168,85,247,.5); border-color:rgba(196,163,255,.85); transform:scale(1.035); } }
+@keyframes mb-badge-dot{ 0%,100%{ transform:scale(.7); opacity:.5; } 50%{ transform:scale(1); opacity:1; } }
+@keyframes mb-drift{ 0%{ left:-20%; opacity:0; } 30%{ opacity:.9; } 70%{ opacity:.9; } 100%{ left:90%; opacity:0; } }
+@keyframes mb-iconpulse{ 0%{ transform:translateY(0) rotate(-2deg); } 50%{ transform:translateY(-4px) rotate(2deg); } 100%{ transform:translateY(0) rotate(-2deg); } }
+@keyframes mb-cardglow-red{ 0%,100%{ box-shadow:0 0 0 0 rgba(244,63,94,0); border-color:rgba(244,63,94,.22); } 50%{ box-shadow:0 0 28px -4px rgba(244,63,94,.3); border-color:rgba(244,63,94,.5); } }
+@keyframes mb-cardglow-violet{ 0%,100%{ box-shadow:0 0 0 0 rgba(168,85,247,0); border-color:rgba(168,85,247,.16); } 50%{ box-shadow:0 0 30px -4px rgba(168,85,247,.34); border-color:rgba(168,85,247,.5); } }
+@keyframes mb-grad-flow{ 0%{ background-position:0% 0%; } 50%{ background-position:0% 100%; } 100%{ background-position:0% 0%; } }
+@keyframes mb-grad-flow-x{ 0%{ background-position:0% 50%; } 50%{ background-position:100% 50%; } 100%{ background-position:0% 50%; } }
+@keyframes mb-shield-in{ from{ opacity:0; transform:translateY(-50%) scale(.78) rotate(-6deg); } to{ opacity:1; transform:translateY(-50%) scale(1) rotate(0deg); } }
+@keyframes mb-shield-float{ 0%,100%{ transform:translateY(-50%) scale(1) rotate(0deg); } 50%{ transform:translateY(-54%) scale(1.035) rotate(1.5deg); } }
+@keyframes mb-book-sway{ 0%{ transform:translateY(-50%) rotate(-1.4deg); } 50%{ transform:translateY(-50%) rotate(1.4deg); } 100%{ transform:translateY(-50%) rotate(-1.4deg); } }
+
+@media (max-width:1200px){
+  [data-m~="pad"]{ padding-left:20px !important; padding-right:20px !important; }
+  [data-m~="stack"]{ display:flex !important; flex-direction:column !important; }
+  [data-m~="stack"] [data-m~="col"]{ grid-column:auto !important; width:100% !important; max-width:100% !important; }
+
+  /* shared: center all stacked text on mobile */
+  [data-m~="hero-text"], [data-m~="pain"], [data-m~="arsenal-head"], [data-m~="bonus-card"], [data-m~="offer-left"], [data-m~="guarantee-card"], [data-m~="thiago-text"]{ text-align:center !important; }
+
+  /* HERO — order: woman image, chat, headline, then (scroll) sub, button, price */
+  [data-m~="hero"]{ display:flex !important; flex-direction:column !important; gap:16px !important; padding-top:2px !important; padding-bottom:46px !important; align-items:center !important; }
+  [data-m~="hero-img"]{ position:static !important; display:block !important; width:auto !important; max-width:420px !important; height:auto !important; margin:2px auto 0 !important; right:auto !important; }
+  [data-m~="hero-chat"]{ order:1 !important; left:0 !important; top:0 !important; align-self:stretch !important; width:auto !important; max-width:none !important; margin:0 -20px !important; }
+  [data-m~="nav-bar"]{ display:none !important; }
+  [data-m~="hero-mobile-logo"]{ display:block !important; }
+  [data-m~="hero-text"]{ order:2 !important; width:100% !important; }
+  [data-m~="headline"]{ font-size:28px !important; -webkit-line-clamp:unset !important; margin-bottom:14px !important; margin-top:6px !important; }
+  [data-m~="hero-badge"]{ margin-bottom:18px !important; }
+  [data-m~="hero-sub"]{ font-size:17px !important; line-height:1.45 !important; margin:0 auto 24px !important; max-width:none !important; }
+  [data-m~="hero-actions"]{ flex-direction:column !important; align-items:center !important; gap:16px !important; }
+  [data-m~="hero-actions"] > a{ justify-content:center !important; width:100% !important; box-sizing:border-box !important; }
+  [data-m~="hero-actions"] > div{ align-items:center !important; }
+
+  /* generic heading scale + unwrap */
+  [data-m~="h2"]{ font-size:30px !important; white-space:normal !important; }
+
+  /* PAIN */
+  [data-m~="pain"]{ padding-top:48px !important; padding-bottom:48px !important; gap:22px !important; }
+  [data-m~="pain"] p{ max-width:none !important; }
+  [data-m~="pare-row"]{ justify-content:center !important; }
+
+  /* ARSENAL */
+  [data-m~="arsenal-head"]{ display:flex !important; flex-direction:column !important; align-items:center !important; }
+  [data-m~="arsenal-cards"]{ display:flex !important; flex-direction:column !important; gap:16px !important; }
+
+  /* BONUS */
+  [data-m~="bonus-card"]{ padding:30px 22px !important; }
+  [data-m~="bonus-card"] h3 img{ margin-left:auto !important; margin-right:auto !important; }
+  [data-m~="bonus-eyebrow"]{ justify-content:center !important; white-space:nowrap !important; font-size:17px !important; letter-spacing:0 !important; }
+  [data-m~="bonus-leak"]{ display:none !important; }
+  [data-m~="bonus-img"]{ position:static !important; display:block !important; transform:none !important; height:auto !important; width:auto !important; max-width:230px !important; margin:0 auto 22px !important; animation:none !important; }
+
+  /* ANTES / DEPOIS */
+  [data-m~="ad"]{ gap:18px !important; }
+  [data-m~="ad-desc"]{ font-size:21px !important; }
+
+  /* THIAGO */
+  [data-m~="thiago"]{ min-height:auto !important; padding:46px 0 0 !important; }
+  [data-m~="thiago-text"]{ max-width:none !important; transform:none !important; }
+  [data-m~="thiago-text"] h2{ font-size:32px !important; }
+  [data-m~="thiago-title"]{ margin-top:10px !important; margin-bottom:22px !important; }
+  [data-m~="thiago-badge"]{ justify-content:center !important; }
+  [data-m~="thiago-img"]{ position:static !important; width:130% !important; margin:12px -15% 0 !important; right:auto !important; top:auto !important; bottom:auto !important; display:block !important; }
+  [data-m~="thiago-img"] img{ height:auto !important; width:100% !important; }
+
+  /* OFFER (card de ancoragem) — reorder: books, logo, badge, price, scarcity, countdown, CTA */
+  [data-m~="offer"]{ margin-top:44px !important; padding-bottom:56px !important; }
+  [data-m~="offer-card"]{ padding:0 20px 34px !important; }
+  [data-m~="offer-inner"]{ display:flex !important; flex-direction:column !important; gap:0 !important; align-items:stretch !important; }
+  [data-m~="offer-left"], [data-m~="offer-right"]{ display:contents !important; }
+  [data-m~="offer-books"]{ order:1 !important; margin-top:18px !important; margin-bottom:10px !important; }
+  [data-m~="offer-books"] img{ width:112% !important; }
+  [data-m~="offer-logo"]{ order:2 !important; align-self:center !important; margin:6px auto 0 !important; }
+  [data-m~="offer-badge"]{ order:3 !important; margin-top:18px !important; margin-bottom:0 !important; }
+  [data-m~="offer-price"]{ order:4 !important; text-align:center !important; margin-top:22px !important; }
+  [data-m~="offer-subprice"]{ order:5 !important; margin-left:auto !important; margin-right:auto !important; }
+  [data-m~="scarcity"]{ order:6 !important; margin-top:26px !important; text-align:left !important; width:100% !important; }
+  [data-m~="offer-countdown"]{ order:7 !important; margin-top:26px !important; margin-bottom:0 !important; }
+  [data-m~="offer-cta"]{ order:8 !important; margin-top:22px !important; }
+  [data-m~="offer-security"]{ order:9 !important; }
+
+  /* GUARANTEE (card de garantia) */
+  [data-m~="guarantee-card"]{ flex-direction:column !important; align-items:center !important; padding:248px 22px 30px !important; gap:8px !important; }
+  [data-m~="guarantee-img"]{ animation:none !important; height:218px !important; left:50% !important; top:18px !important; transform:translateX(-50%) !important; }
+  [data-m~="guarantee-title"]{ font-size:21px !important; }
+  [data-m~="guarantee-desc"]{ line-height:1.4 !important; }
+  /* FOOTER */
+  [data-m~="footer-row"]{ flex-direction:column !important; justify-content:center !important; text-align:center !important; gap:14px !important; }
+}
+
+/* ---------------------------------------------------------------------------
+   Hover states — replace the prototype's custom `style-hover` attribute.
+   Marked !important so they win over the elements' inline base styles.
+   --------------------------------------------------------------------------- */
+.cta:hover{
+  transform:translateY(-3px) scale(1.015) !important;
+  background:linear-gradient(135deg,#c79bff,#8b46f0) !important;
+  letter-spacing:.035em !important;
+  box-shadow:0 26px 62px rgba(124,58,237,.66), 0 0 0 1px rgba(196,163,255,.45), inset 0 1px 0 rgba(255,255,255,.5) !important;
+}
+.arsenal-card{ transition:transform .25s ease, border-color .25s ease; }
+.arsenal-card:hover{
+  transform:translateY(-6px) !important;
+  border-color:rgba(168,85,247,.45) !important;
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; }
+}
+</style>
 
 <!-- UTMify -->
 <script
@@ -47,17 +181,18 @@
   <!-- NAV -->
   <nav data-m="pad nav-bar" style="position:relative; z-index:20; max-width:1200px; margin:0 auto; padding:24px 48px; display:flex; align-items:center; justify-content:flex-start;">
     <div style="display:flex; align-items:center; gap:11px;">
-      <img src="assets/logo-header.png" alt="Prosperity Focus" style="height:32px; width:auto; display:block; margin-top:8px;">
+      <img src="assets/logo-header.webp" width="840" height="81" alt="Prosperity Focus" style="height:32px; width:auto; display:block; margin-top:8px;">
     </div>
   </nav>
 
   <!-- hero photo (behind chat card, pinned to page top) -->
-  <img src="assets/hero-woman.png" alt="" data-m="hero-img" style="position:absolute; top:0; right:max(-300px, -19vw); width:clamp(580px, 58vw, 980px); height:auto; z-index:1; pointer-events:none; user-select:none;">
+  <img src="assets/hero-woman.webp" width="900" height="924" fetchpriority="high" decoding="async" alt="" data-m="hero-img" style="position:absolute; top:0; right:max(-300px, -19vw); width:clamp(580px, 58vw, 980px); height:auto; z-index:1; pointer-events:none; user-select:none;">
 
   <!-- HERO -->
+  <main>
   <header data-m="hero pad" style="position:relative; z-index:10; max-width:1200px; margin:0 auto; padding:8px 48px 88px; display:grid; grid-template-columns:repeat(12,1fr); gap:24px; align-items:center;">
     <div data-m="hero-text" style="grid-column:1 / span 7; animation:mb-fadeUp .7s ease both;">
-      <img src="assets/logo-header.png" alt="Prosperity Focus" data-m="hero-mobile-logo" style="display:none; height:30px; width:auto; margin:0 auto 20px;">
+      <img src="assets/logo-header.webp" width="840" height="81" alt="Prosperity Focus" data-m="hero-mobile-logo" style="display:none; height:30px; width:auto; margin:0 auto 20px;">
       <div data-m="hero-badge" style="position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:9px; padding:8px 15px; border:1px solid rgba(168,85,247,.32); border-radius:999px; background:rgba(124,58,237,.10); margin-bottom:30px;">
         <span style="position:absolute; top:50%; left:-20%; width:70px; height:70px; transform:translateY(-50%); border-radius:50%; background:radial-gradient(closest-side,rgba(196,163,255,.55),transparent); filter:blur(8px); animation:mb-drift 4.2s ease-in-out infinite; pointer-events:none;"></span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="position:relative; z-index:1; animation:mb-badge-dot 1.6s ease-in-out infinite;"><rect x="5" y="10" width="14" height="10" rx="2" stroke="#cbb6f5" stroke-width="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#cbb6f5" stroke-width="2"></path></svg>
@@ -84,7 +219,7 @@
         <div style="position:absolute; inset:-30px; background:radial-gradient(closest-side,rgba(124,58,237,.5),transparent); filter:blur(20px); z-index:0;"></div>
         <div style="position:relative; z-index:1; border-radius:26px; padding:18px; background:linear-gradient(165deg,rgba(35,25,62,.92),rgba(14,11,26,.95)); border:1px solid rgba(168,85,247,.22); box-shadow:0 30px 70px rgba(0,0,0,.55);">
           <div style="display:flex; align-items:center; gap:11px; padding:6px 6px 16px; border-bottom:1px solid rgba(168,85,247,.12);">
-            <img src="assets/lucas-avatar.png" alt="Lucas" style="width:38px; height:38px; border-radius:50%; object-fit:cover; object-position:50% 22%; border:1px solid rgba(196,163,255,.4);">
+            <img src="assets/lucas-avatar.webp" width="220" height="331" alt="Lucas" style="width:38px; height:38px; border-radius:50%; object-fit:cover; object-position:50% 22%; border:1px solid rgba(196,163,255,.4);">
             <div style="flex:1;">
               <div style="color:#efeafc; font-weight:600; font-size:15px;">Lucas</div>
               <div style="display:flex; align-items:center; gap:6px; font-size:12px; color:#5eead4;"><span style="width:6px; height:6px; border-radius:50%; background:#5eead4;"></span>online agora</div>
@@ -150,7 +285,7 @@
     <div data-m="stack" style="display:grid; grid-template-columns:repeat(12,1fr); gap:24px; align-items:end; margin-bottom:44px;">
       <div data-m="col arsenal-head" style="grid-column:1 / span 8;">
         <span style="font-size:18px; letter-spacing:.22em; text-transform:uppercase; font-weight:700; background:linear-gradient(110deg,#e9ddff,#a855f7 55%,#7c3aed); -webkit-background-clip:text; background-clip:text; color:transparent;">O que você recebe</span>
-        <h2 data-m="h2" style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#f6f3fe; font-size:clamp(36px,3.8vw,58px); line-height:1.04; letter-spacing:-.02em; white-space:nowrap; display:flex; align-items:center; gap:14px;"><img src="assets/logo-arsenal.png" alt="O" style="height:1.05em; width:auto; display:block; flex:none; transform:translateY(-2px);"><span>Arsenal de 5 Mensagens Curtas</span></h2>
+        <h2 data-m="h2" style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#f6f3fe; font-size:clamp(36px,3.8vw,58px); line-height:1.04; letter-spacing:-.02em; white-space:nowrap; display:flex; align-items:center; gap:14px;"><img src="assets/logo-arsenal.webp" width="160" height="179" alt="O" style="height:1.05em; width:auto; display:block; flex:none; transform:translateY(-2px);"><span>Arsenal de 5 Mensagens Curtas</span></h2>
       </div>
 
     </div>
@@ -198,11 +333,11 @@
       <div data-m="bonus-leak" style="position:absolute; left:-290px; top:50%; transform:translateY(-50%); width:850px; height:940px; background:radial-gradient(ellipse 56% 54% at 2% 50%,rgba(250,246,255,1),rgba(228,210,255,.88) 16%,rgba(208,178,255,.76) 30%,rgba(180,130,250,.64) 44%,rgba(150,80,240,.52) 56%,rgba(124,58,237,.35) 70%,rgba(91,33,182,.17) 82%,transparent 92%); filter:blur(13px); pointer-events:none;"></div>
       <div data-m="bonus-leak" style="position:absolute; left:-40px; top:50%; transform:translateY(-50%); width:480px; height:380px; background:linear-gradient(90deg,rgba(240,232,255,.8),rgba(180,130,250,.36) 40%,rgba(124,58,237,.15) 70%,transparent); filter:blur(32px); pointer-events:none;"></div>
       <div data-m="bonus-leak" style="position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,transparent,rgba(244,238,255,.85),transparent); pointer-events:none;"></div>
-      <img src="assets/bonus-books.png" alt="O Protocolo da Conversa Infinita" data-m="bonus-img" style="position:absolute; z-index:1; left:-12px; top:50%; transform:translateY(-50%); transform-origin:50% 72%; animation:mb-book-sway 6.5s ease-in-out infinite; height:148%; width:auto; max-width:none; object-fit:contain; pointer-events:none; filter:drop-shadow(0 22px 40px rgba(0,0,0,.45));">
+      <img src="assets/bonus-books.webp" width="621" height="837" alt="O Protocolo da Conversa Infinita" data-m="bonus-img" style="position:absolute; z-index:1; left:-12px; top:50%; transform:translateY(-50%); transform-origin:50% 72%; animation:mb-book-sway 6.5s ease-in-out infinite; height:148%; width:auto; max-width:none; object-fit:contain; pointer-events:none; filter:drop-shadow(0 22px 40px rgba(0,0,0,.45));">
       <div data-m="stack" style="position:relative; z-index:2; display:grid; grid-template-columns:repeat(12,1fr); gap:24px; align-items:center;">
         <div data-m="col" style="grid-column:6 / span 7;">
           <span data-m="bonus-eyebrow" style="display:inline-flex; align-items:center; gap:8px; font-size:16px; letter-spacing:.22em; text-transform:uppercase; color:#d6c2fb; font-weight:700;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 12v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8" stroke="#d6c2fb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21.5 7.5h-19v4.5h19V7.5z" stroke="#d6c2fb" stroke-width="1.8" stroke-linejoin="round"></path><path d="M12 7.5V21M12 7.5S10.5 3.5 7.8 4.1C6 4.5 6 7 7.8 7.4c1.4.3 4.2.1 4.2.1zM12 7.5s1.5-4 4.2-3.4C18 4.5 18 7 16.2 7.4c-1.4.3-4.2.1-4.2.1z" stroke="#d6c2fb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Bônus de acesso imediato</span>
-          <h3 style="margin:20px 0 16px;"><img src="assets/logo-protocolo.png" alt="O Protocolo da Conversa Infinita" style="display:block; width:100%; max-width:320px; height:auto;"></h3>
+          <h3 style="margin:20px 0 16px;"><img src="assets/logo-protocolo.webp" width="640" height="156" alt="O Protocolo da Conversa Infinita" style="display:block; width:100%; max-width:320px; height:auto;"></h3>
           <p style="margin-top:12px; font-size:20px; line-height:1.55; color:#e0d8f4;">Domine a arte de manter o interesse de qualquer homem por horas.</p>
         </div>
       </div>
@@ -212,7 +347,7 @@
   <!-- ANTES / DEPOIS -->
   <section data-m="pad stack ad" style="position:relative; z-index:5; max-width:1200px; margin:0 auto; padding:0 48px 88px; display:grid; grid-template-columns:repeat(12,1fr); gap:24px;">
     <div data-m="col" style="grid-column:1 / span 6; border-radius:20px; overflow:hidden; background:linear-gradient(165deg,rgba(28,20,40,.5),rgba(14,11,22,.6)); border:1px solid rgba(120,113,140,.18);">
-      <img src="assets/antes-couple.png" alt="" style="display:block; width:100%; height:190px; object-fit:cover; object-position:50% 38%;">
+      <img src="assets/antes-couple.webp" width="960" height="540" alt="" style="display:block; width:100%; height:190px; object-fit:cover; object-position:50% 38%;">
       <div style="padding:28px 32px 32px;">
         <div style="display:flex; align-items:center; gap:14px; margin-bottom:16px;">
           <div style="width:42px; height:42px; border-radius:13px; background:linear-gradient(145deg,#4a4458 0%,#322d3e 55%,#211d2a 100%); border:1px solid rgba(160,153,176,.18); display:flex; align-items:center; justify-content:center; box-shadow:inset 0 1.5px 1px rgba(190,184,205,.22), inset 0 -7px 13px rgba(10,8,16,.6); animation:mb-iconpulse 2.7s ease-in-out infinite;">
@@ -224,7 +359,7 @@
       </div>
     </div>
     <div data-m="col" style="grid-column:7 / span 6; border-radius:20px; overflow:hidden; background:linear-gradient(165deg,rgba(35,25,62,.55),rgba(14,11,26,.7)); border:1px solid rgba(168,85,247,.16);">
-      <img src="assets/depois-phone.png" alt="" style="display:block; width:100%; height:190px; object-fit:cover; object-position:50% 62%;">
+      <img src="assets/depois-phone.webp" width="960" height="540" alt="" style="display:block; width:100%; height:190px; object-fit:cover; object-position:50% 62%;">
       <div style="padding:28px 32px 32px;">
         <div style="display:flex; align-items:center; gap:14px; margin-bottom:18px;">
           <div style="flex:none; width:44px; height:44px; border-radius:13px; background:linear-gradient(145deg,#dcc4ff 0%,#b07cf5 38%,#7c3aed 72%,#5b21b6 100%); border:1px solid rgba(255,255,255,.3); display:flex; align-items:center; justify-content:center; box-shadow:0 14px 26px rgba(76,29,149,.6), inset 0 2px 1px rgba(255,255,255,.65), inset 0 -9px 16px rgba(46,16,101,.65), inset 3px 0 8px rgba(255,255,255,.18); animation:mb-iconpulse 2.8s ease-in-out infinite;">
@@ -254,7 +389,7 @@
       </div>
     </div>
     <div data-m="thiago-img" style="position:absolute; right:-5vw; top:47px; bottom:0; display:flex; align-items:flex-end; justify-content:flex-end;">
-      <img src="assets/thiago-lins.webp" alt="Thiago Lins" style="position: static; display: block; height: 100%; width: auto; max-width: none; object-fit: contain; margin: 0">
+      <img src="assets/thiago-lins.webp" width="855" height="742" alt="Thiago Lins" style="position: static; display: block; height: 100%; width: auto; max-width: none; object-fit: contain; margin: 0">
     </div>
   </section>
 
@@ -270,7 +405,7 @@
       <div data-m="offer-inner" style="position:relative; display:grid; grid-template-columns:repeat(12,1fr); gap:40px; align-items:end;">
         <!-- left: price -->
         <div data-m="offer-left" style="grid-column:1 / span 6; align-self:stretch; display:flex; flex-direction:column; justify-content:flex-end; gap:0;">
-          <img src="assets/logo-header.png" alt="Prosperity Focus" data-m="offer-logo" style="height:32px; width:auto; display:block; align-self:flex-start; margin-top:14px;">
+          <img src="assets/logo-header.webp" width="840" height="81" alt="Prosperity Focus" data-m="offer-logo" style="height:32px; width:auto; display:block; align-self:flex-start; margin-top:14px;">
           <div data-m="offer-price" style="margin-top:40px; margin-bottom:0;">
             <span style="display:block; font-size:26px; color:#ffffff; font-weight:500; margin-bottom:6px;">de <span style="text-decoration:line-through; color:#cbb6f5;">R$ 97</span> por</span>
             <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(80px,7vw,108px); line-height:.9; color:#fff;">R$ 47</span>
@@ -293,7 +428,7 @@
         <!-- right: countdown + CTA -->
         <div data-m="offer-right" style="grid-column:8 / span 5;">
           <div data-m="offer-books" style="position:relative; z-index:3; display:flex; justify-content:center; margin-top:-330px; margin-bottom:-64px;">
-            <img src="assets/books-bundle.png" alt="O Arsenal + O Protocolo da Conversa Infinita" style="width:760px; max-width:none; height:auto; display:block; filter:drop-shadow(0 24px 40px rgba(0,0,0,.45)); animation:mb-float 5.5s ease-in-out infinite;">
+            <img src="assets/books-bundle.webp" width="1100" height="827" alt="O Arsenal + O Protocolo da Conversa Infinita" style="width:760px; max-width:none; height:auto; display:block; filter:drop-shadow(0 24px 40px rgba(0,0,0,.45)); animation:mb-float 5.5s ease-in-out infinite;">
           </div>
           <div data-m="offer-badge" style="display:flex; justify-content:center; margin-bottom:18px;">
             <div style="position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:9px; padding:8px 16px; border-radius:999px; background:rgba(22,12,40,.7); border:1px solid rgba(168,85,247,.32);">
@@ -339,24 +474,25 @@
       <div style="position:absolute; left:-290px; top:50%; transform:translateY(-50%); width:850px; height:940px; background:radial-gradient(ellipse 56% 54% at 2% 50%,rgba(240,255,251,1),rgba(190,255,240,.86) 16%,rgba(140,245,220,.74) 30%,rgba(80,225,200,.6) 44%,rgba(45,200,180,.48) 56%,rgba(20,160,140,.3) 70%,rgba(13,110,95,.15) 82%,transparent 92%); filter:blur(13px); pointer-events:none;"></div>
       <div style="position:absolute; left:-40px; top:50%; transform:translateY(-50%); width:480px; height:380px; background:linear-gradient(90deg,rgba(230,255,248,.78),rgba(80,225,200,.32) 40%,rgba(20,160,140,.13) 70%,transparent); filter:blur(32px); pointer-events:none;"></div>
       <div style="position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,transparent,rgba(230,255,248,.85),transparent); pointer-events:none;"></div>
-      <img src="assets/shield-guarantee.png" alt="Garantia" data-m="guarantee-img" style="position:absolute; z-index:1; left:-26px; top:50%; transform:translateY(-50%); height:280px; width:auto; max-width:none; object-fit:contain; pointer-events:none; animation:mb-shield-in .9s cubic-bezier(.2,.8,.3,1) both, mb-shield-float 4.5s ease-in-out .9s infinite;">
+      <img src="assets/shield-guarantee.webp" width="560" height="564" alt="Garantia" data-m="guarantee-img" style="position:absolute; z-index:1; left:-26px; top:50%; transform:translateY(-50%); height:280px; width:auto; max-width:none; object-fit:contain; pointer-events:none; animation:mb-shield-in .9s cubic-bezier(.2,.8,.3,1) both, mb-shield-float 4.5s ease-in-out .9s infinite;">
       <div>
         <h3 data-m="guarantee-title" style="font-family:'Space Grotesk',sans-serif; font-weight:700; color:#d7fbf2; font-size:20px; margin-bottom:6px;">Garantia incondicional de 15 dias</h3>
         <p data-m="guarantee-desc" style="font-size:18.5px; line-height:1.55; color:#ffffff;">Experimente o produto. Se não receber uma resposta em poucos minutos, reembolsaremos o seu dinheiro.</p>
       </div>
     </div>
   </section>
+  </main>
 
   <!-- FOOTER -->
   <footer style="position:relative; z-index:5; background:#fff; color:#2a2a30; border-top:1px solid #e7e7ea; font-family:'Inter',sans-serif;">
     <div data-m="pad footer-row" style="max-width:1132px; margin:0 auto; padding:30px 24px; width:100%; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
-      <img src="assets/logo-header.png" alt="O Arsenal + O Protocolo da Conversa Infinita" style="height:24px; width:auto; display:block; filter:brightness(0) opacity(0.7);">
+      <img src="assets/logo-header.webp" width="840" height="81" alt="O Arsenal + O Protocolo da Conversa Infinita" style="height:24px; width:auto; display:block; filter:brightness(0) opacity(0.7);">
       <p style="color:#52525a; font-size:16px;">Thiago Lins 2026 © Todos os direitos reservados.</p>
     </div>
   </footer>
 
 </div>
 
-<script src="app.js"></script>
+<script src="app.js" defer></script>
 </body>
 </html>
