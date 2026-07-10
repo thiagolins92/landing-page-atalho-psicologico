@@ -34,6 +34,9 @@
 html{ scroll-behavior:smooth; }
 body{ background:#07060f; -webkit-font-smoothing:antialiased; }
 ::selection{ background:rgba(168,85,247,.35); color:#fff; }
+/* perf: pula render/anim de secoes fora da tela ate estarem proximas */
+main > section{ content-visibility:auto; contain-intrinsic-size:auto 900px; }
+footer{ content-visibility:auto; contain-intrinsic-size:auto 220px; }
 
 @keyframes mb-fadeUp{ from{ opacity:0; transform:translateY(18px); } to{ opacity:1; transform:translateY(0); } }
 @keyframes mb-glow{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
