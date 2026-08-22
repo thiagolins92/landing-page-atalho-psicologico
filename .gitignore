@@ -6,3 +6,6 @@ project/
 
 # Local Netlify folder
 .netlify
+
+# graphify (grafo gerado, regeneravel com: graphify update .)
+graphify-out/
